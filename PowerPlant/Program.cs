@@ -10,6 +10,13 @@ namespace PowerPlant
     {
         static void Main(string[] args)
         {
+            VitalDetector vitalDetector = new VitalDetector() { Name = "Bob" };
+            Sensor sensor = new Sensor();
+
+            vitalDetector.Tick += sensor.RegisterTick;
+            vitalDetector.Tick += sensor.MakeBip;
+            vitalDetector.StartDecetor();
+
         }
     }
 }
